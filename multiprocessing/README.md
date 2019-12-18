@@ -72,7 +72,7 @@ def f(x):
 
 If we increase the loop size inside ```f(x)```, the speed up will be more evident.
 
-```
+```python
 def f(x):
     fixed = x
     for i in range(10000000):
