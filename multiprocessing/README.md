@@ -1,4 +1,4 @@
-# Multiprocessing In Python
+# Multiprocessing/Multithreading in Python
 
 ### Code
 
@@ -84,3 +84,47 @@ def f(x):
 ```bash
 12.5859854 53.500728800000005
 ```
+
+### Using multi-threading to accelerate I/O bound tasks
+
+- Reference:
+
+  - Python Documentation on concurrent.futures: https://docs.python.org/3.8/library/concurrent.futures.html?highlight=concurrency
+
+  - Medium article: https://medium.com/towards-artificial-intelligence/the-why-when-and-how-of-using-python-multi-threading-and-multi-processing-afd1b8a8ecca
+
+    - takeaway from this article is to use multi-processing for CPU-bound tasks and multi-threading for IO-bound tasks. Also, use the concurrent.futures API instead of multiprocessing
+
+- Code:
+
+```python
+with ThreadPoolExecutor() as executor:
+    results = executor.map(f, input_list)
+```
+
+- Testing results:
+
+  - Test case: I created 1000 random numpy files on disk. In total, roughly 11GB. I wrote two functions to copy them.
+
+    ```python
+    if not os.path.isdir('random_files'):
+    os.mkdir('random_files')
+    #  random array
+    for i in range(1000):
+	random_img = np.random.randint(0, 255, size=(3, 1000, 1000))
+	file_name = "%d.npy"%i
+	np.save(os.path.join('random_files', file_name), random_img)
+    ```
+
+  - Test result:
+      - single threading:
+
+      	```bash
+	Took 73.2559873
+	```
+
+      - multi threading:
+
+      	```bash
+	Took 55.9786058
+	```
