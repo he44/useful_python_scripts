@@ -1,0 +1,5 @@
+*** Configuring Python Project
+
+**** Refernce:
+
+https://whalesalad.com/blog/doing-python-configuration-right
