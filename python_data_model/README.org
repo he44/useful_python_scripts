@@ -1,0 +1,9 @@
+* Python Data Model
+
+*** Data Model or Object Model
+
+- properties of objects in general in a specific computer programming language
+  
+*** Special Methods / Dunder Methods / Magic Methods
+
+- "magic" : existing only for built-in objects, not custom objects ? (e.g. Javascript)
