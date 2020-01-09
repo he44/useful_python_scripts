@@ -1,1 +1,31 @@
 * An Array of Sequence
+
+** Category of Sequences
+
+*** container vs flat
+
+**** container: can hold items of different types via reference
+     
+- e.g. list, tuple ...
+
+**** flat: hold items of one type via value
+
+- e.g. str, bytes ... 
+  
+*** mutable vs immutable
+
+**** mutable: list, deque, ...
+
+**** immutable: tuple, str and bytes
+     
+** List
+
+- mutable and container
+  
+*** List Comprehension
+    
+*** Generator Expression
+
+** Tuple    
+   
+- immutable list + records with no field names
