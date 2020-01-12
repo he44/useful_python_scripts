@@ -29,3 +29,26 @@
 ** Tuple    
    
 - immutable list + records with no field names
+  
+** Slicing
+
+- Why the last item is excluded ? i.e. why [0:2] gives item 0 and 1
+  
+  Three advantages of excluding the last item
+  
+  - easy to get the length of the range / slice
+    
+    - [:3] gives three items
+
+    - [1:2] gives 3 - 1 = 2 items
+      
+  - easy to split sequence into two parts without overlapping
+
+    - [:x] and [x:]
+      
+** Multidimensional Slicing
+   
+- [] taking multiple indexes or slices separated by commas
+  
+- can use ellipsis to omit some dimensions (?)
+
