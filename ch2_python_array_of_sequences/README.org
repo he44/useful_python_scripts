@@ -51,4 +51,51 @@
 - [] taking multiple indexes or slices separated by commas
   
 - can use ellipsis to omit some dimensions (?)
+  
+** Augmented Assignment
+   
+- implemented via iadd / imul dunder method
+  
+  - in-place
 
+  - if not implemented (all immutable objects), falls back to add dunder method
+    
+    - will need to create a new object
+      
+** List Sort
+
+- *Python convention:* functions that change objects in-place should return None to remind that
+  
+*** list.sort
+
+- in-place
+
+*** sorted() (built-in)
+    
+- accepting any iterable argument
+    
+- creating a new object (sorted) and returning it
+  
+*** Optional Arguments
+    
+- reverse
+
+- key
+
+  - one-argument function
+
+  - applied to each item to generate its sorting key
+    
+** List may not be the ansewr
+
+*** Case 1: storing 10 million float objects
+
+- array is better because it only holds the bytes representing float's machine values, *not* the actual float objects
+  
+*** Case 2: constantly doing FIFO (adding/removing from the ends)
+  
+- double-ended queue (deque) is faster
+  
+*** Case 3: lots of containment checks
+
+- sets work faster as they are optimized for fast membership checking
