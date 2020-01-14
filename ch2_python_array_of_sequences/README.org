@@ -99,3 +99,21 @@
 *** Case 3: lots of containment checks
 
 - sets work faster as they are optimized for fast membership checking
+  
+** Array
+   
+- as lean as C array
+  
+** Memory Views
+   
+** Deques
+   
+- inserting and removing from the left of a list is costly --> requiring the entire list to be shifted
+  
+- deque
+
+  - easy to add/remove from both ends (optimized for this)
+
+    cost: not as fast to remove elements form middle of a deque
+
+  - can be declared with limited length
