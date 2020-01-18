@@ -1,0 +1,15 @@
+* Dictionaries and Sets
+
+** Generic Mapping Types
+
+*** keys must be hashable
+
+**** hashable object
+
+- having a hash value that never changes during its lifetime (\__hash\__)
+
+- can be compared (\__eq\__)
+  
+- all atomic immutable types are hashable (str, bytes ...)
+  
+- tuples are hashable is *all* its fields are hashable
